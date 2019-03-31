@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Update Employee</title>
+</head>
+<body>
+	<form action="#" th:action="@{/update/{id}(id=${employee.id})}"
+		th:object="${employee}" method="post">
+		<label for="name">Name</label> 
+		<input type="text" th:field="*{name}"
+			id="name" placeholder="Name"> <span
+			th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span> 
+		<label for="title">Title</label> 
+		<input type="text" th:field="*{title}"
+			id="title" placeholder="Title"> <span
+			th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span> 
+		<label for="leader">Leader</label> 
+		<input type="text"
+			th:field="*{leader}" id="leader"
+			placeholder="leader"> <span
+			th:if="${#fields.hasErrors('leader')}" th:errors="*{leader}"></span> 
+		<label for="department.deptno">Department Number</label> 
+		<input type="text" th:field="*{department.deptno}"
+			id="department.deptno" placeholder="Department Number"> <span
+			th:if="${#fields.hasErrors('department.deptno')}" th:errors="*{department.deptno}"></span> 
+		<label for="department.deptname">Department Name</label>
+		<input type="text" th:field="*{department.deptname}" id="department.deptname"
+			placeholder="Department Name"> <span
+			th:if="${#fields.hasErrors('department.deptname')}" th:errors="*{department.deptname}"></span> 
+		<label for="department.deptloc">Department Location</label>
+		<input type="text" th:field="*{department.deptloc}" id="department.deptloc"
+			placeholder="Department Location"> <span
+			th:if="${#fields.hasErrors('department.deptloc')}" th:errors="*{department.deptloc}"></span>
+			<br/> 
+			<input type="submit"
+			value="Update Employee">
+	</form>
+</body>
+</html>

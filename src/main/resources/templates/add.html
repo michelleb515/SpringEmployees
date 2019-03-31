@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Add New Employee</title>
+</head>
+<body>
+<form name='f' th:object="${newEmployee}" th:action="@{/addEmployee}"
+	method='POST'>
+		Name: <input name="name" size="30"> <br />
+		Title: <input name="title" size="30"><br />
+		Leader: <input name="leader" size="30"><br />
+		Department Number: <input name="department.deptno" size="10"><br />
+		Department Name: <input name="department.deptname" size="30"><br />
+		Department Location:<input name="department.deptloc" size="20"><br />
+		<input name="submit" type="submit" value="submit" />
+</form>
+<br/>
+<a href="viewAll">View All Contacts</a>
+<p><a href ="index.html">Go back to the Homepage</a></p>
+</body>
+</html>	
